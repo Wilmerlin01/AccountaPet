@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <button class="button-nav"><a href="{{ url_for('home') }}">Home</a></button>
+        <button class="button-nav"><a href="{{ url_for('shop') }}">Shop</a></button>
+        <button class="button-nav"><a href="{{ url_for('pet_status') }}">Pet Status</a></button>
+        <button class="button-nav"><a href="{{ url_for('settings') }}">Settings</a></button>
+    </div>
+    <h1>Settings</h1>
+    <p>Here are your current settings:</p>
+    <ul>
+        <li>Sound: 
+            <label class="toggle-switch">
+                <input type="checkbox" id="sound-toggle" />
+                <span class="switch"></span>
+            </label>
+        </li>
+        <li>Notifications:
+            <label class="toggle-switch">
+                <input type="checkbox" id="notification-toggle" />
+                <span class="switch"></span>
+            </label>
+        </li>
+        <li>Language: 
+            <div class="language-dropdown">
+                <button class="language-dropdown-toggle">Select Language</button>
+                <ul class="language-dropdown-menu">
+                  <li><a href="#" class="language-dropdown-item">English</a></li>
+                  <li><a href="#" class="language-dropdown-item">Spanish</a></li>
+                  <li><a href="#" class="language-dropdown-item">French</a></li>
+                  <li><a href="#" class="language-dropdown-item">German</a></li>
+                </ul>
+            </div>
+            <script>
+                const toggleButton = document.querySelector('.language-dropdown-toggle');
+                const menuItems = document.querySelectorAll('.language-dropdown-item');
+              
+                menuItems.forEach(item => {
+                  item.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    toggleButton.textContent = event.target.textContent;
+                  });
+                });
+            </script>
+        </li>
+    </ul>
+</body>
+</html>
+

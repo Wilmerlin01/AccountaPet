@@ -143,3 +143,12 @@ form button:hover {
   padding: 5px;
 }
 
+.pet-image {
+  text-align: center;
+}
+
+.pet-image img {
+  width: 100px;
+  height: 100px;
+}
+
